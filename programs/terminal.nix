@@ -7,7 +7,6 @@
 
   environment.variables = {
     PS1 = ''[\u@\h \W]\$'';
-    EDITOR = "nvim";
     TERM = "kitty";
     TERMINAL = "kitty";
     BROWSER = "floorp";

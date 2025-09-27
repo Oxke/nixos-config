@@ -105,29 +105,28 @@
     '';
   };
  
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  #   extraLuaConfig = lib.fileContents ~/.config/nvim/init.lua.bak;
-  #   extraPackages = with pkgs; [
-  #     nodejs
-  #     lazygit
-  #   ];
-  #   plugins = with pkgs.vimPlugins; [
-  #     nvim-treesitter-parsers.rnoweb
-  #     nvim-treesitter-parsers.latex
-  #     nvim-treesitter-parsers.yaml
-  #     nvim-treesitter-parsers.html
-  #     nvim-treesitter-parsers.css
-  #     nvim-treesitter-parsers.javascript
-  #     nvim-treesitter-parsers.scss
-  #     nvim-treesitter-parsers.svelte
-  #     nvim-treesitter-parsers.tsx
-  #     nvim-treesitter-parsers.typst
-  #     nvim-treesitter-parsers.vue
-  #     snacks-nvim
-  #   ];
-  # };
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
+    vimdiffAlias = true;
+
+    globals.mapleader = ",";
+    opts = {
+      number = true;
+      relativenumber = true;
+      shiftwidth = 2;
+    };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>m";
+        action = "<cmd>w<cr>";
+      }
+    ];
+
+    colorscheme.catppuccin.enable = true;
+    plugins.lualine.enable = true;
+  };
 
   programs.vscode = {
     enable = true;
