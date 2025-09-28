@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   users.users.oxke = {
     isNormalUser = true;
@@ -11,8 +11,9 @@
     ];
   };
   home-manager = {
-      backupFileExtension = "bak";
-      useGlobalPkgs = true;
-      users.oxke = import ./home.oxke.nix;
+    backupFileExtension = "bak";
+    useGlobalPkgs = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.oxke = import ./home.oxke.nix;
   };
 }

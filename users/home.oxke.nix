@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
   imports= [
     inputs.nixvim.homeModules.nixvim
@@ -128,7 +128,7 @@
       }
     ];
 
-    colorscheme.catppuccin.enable = true;
+    colorscheme = "catppuccin";
     plugins.lualine.enable = true;
   };
 
