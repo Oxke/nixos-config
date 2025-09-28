@@ -19,7 +19,7 @@
     ollama
     dict
     vim
-    webex
+    python313Packages.matplotlib
   ];
 
   home.stateVersion = "25.05";

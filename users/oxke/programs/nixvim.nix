@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   programs.nixvim = {
     enable = true;
@@ -20,5 +21,7 @@
 
     colorschemes.oxocarbon.enable = true;
     plugins.lualine.enable = true;
+
+    extraConfigLua = lib.fileContents /home/oxke/.config/nvim/init.lua.bak;
   };
 }
