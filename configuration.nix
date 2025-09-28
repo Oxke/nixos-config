@@ -5,7 +5,7 @@
     ./suspend-then-hibernate.nix
 
     ./hosts/nixosea.nix
-    ./users/oxke.nix
+    ./users/oxke
     ./services ./programs
   ];
 

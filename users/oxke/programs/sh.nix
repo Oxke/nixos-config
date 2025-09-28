@@ -1,42 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
 {
-  imports= [
-    inputs.nixvim.homeModules.nixvim
-  ];
-  
-  home.packages = with pkgs; [
-    atool
-    httpie
-    floorp-bin
-    waybar
-    rofi
-    mutt
-    kitty
-    lolcat
-    sl
-    cowsay
-    tailscale
-    i3status
-    nerd-fonts.caskaydia-cove
-    fira-code
-    texliveFull
-    nchat
-    luarocks
-    ollama
-    fyi
-    bitwarden-menu
-    discord-canary
-    dict
-    fzf
-    gccgo
-    R
-    vim
-    webex
-    octaveFull
-    urlscan
-    pup
-  ];
-
   programs.bash = {
     enable = false;
     bashrcExtra = ''
@@ -108,50 +70,4 @@
           fastfetch -l - --logo-color-1 $(grep -q dark ~/.config/theme && echo white || echo black)
     '';
   };
- 
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-    vimdiffAlias = true;
-
-    globals.mapleader = ",";
-    opts = {
-      number = true;
-      relativenumber = true;
-      shiftwidth = 2;
-    };
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>m";
-        action = "<cmd>w<cr>";
-      }
-    ];
-
-    colorschemes.oxocarbon.enable = true;
-    plugins.lualine.enable = true;
-
-
-  };
-
-  programs.vscode = {
-    enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
-      vscodevim.vim
-      yzhang.markdown-all-in-one
-
-      github.copilot
-      github.copilot-chat
-
-      ms-python.python
-      ms-python.vscode-pylance
-      
-      julialang.language-julia
-
-      ms-vscode.cpptools
-    ];
-  };
-
-  home.stateVersion = "25.05";
 }

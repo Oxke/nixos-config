@@ -14,6 +14,6 @@
     backupFileExtension = "bak";
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
-    users.oxke = import ./home.oxke.nix;
+    users.oxke = import ./home.nix;
   };
 }
