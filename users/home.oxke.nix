@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 {
+  imports= [
+    inputs.nixvim.homeModules.nixvim
+  ];
+  
   home.packages = with pkgs; [
     atool
     httpie

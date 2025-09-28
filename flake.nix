@@ -20,11 +20,11 @@
     nixosConfigurations = {
       nixosea = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.home-manager
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-	  inputs.nixvim.homeModules.nixvim
         ];
       };
     };
