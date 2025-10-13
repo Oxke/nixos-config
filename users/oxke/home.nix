@@ -6,7 +6,7 @@
   ];
   
   home.packages = with pkgs; [
-    floorp-bin
+    floorp-bin obs-studio
     fzf rofi atool fyi
     urlscan httpie pup tailscale
     kitty lolcat sl cowsay
