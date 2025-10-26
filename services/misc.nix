@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   services.printing.enable = true;
+  security.pam.services.swaylock = {};
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [

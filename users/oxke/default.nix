@@ -5,9 +5,10 @@
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      tree wl-clipboard-rs slurp swaybg swaylock mako wl-mirror
+      tree wl-clipboard-rs slurp swaybg mako wl-mirror
       fastfetch bitwarden-desktop bitwarden-cli
       libreoffice zathura jq
+      anki
     ];
   };
   home-manager = {
