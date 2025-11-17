@@ -63,7 +63,7 @@
           ssh -L 8888:localhost:8888 -J archoxke,natsrt,dorian,obs seti$1
       }
 
-      curl -s --connect-timeout 0.5 http://archoxke.junco-wall.ts.net:5000 | \
+      curl -s --connect-timeout 0.7 https://archoxke.junco-wall.ts.net | \
           awk '/<div class="chunk">/,/<\/div>/' | \
           sed 's/<[^>]*>//g' | \
           cowsay -r | \
