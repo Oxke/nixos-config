@@ -1,17 +1,20 @@
 { lib, ... }:
 {
+  imports = [
+    ./plugins.nix
+  ];
   programs.nixvim = {
     enable = true;
-    defaulteditor = true;
-    vimdiffalias = true;
+    defaultEditor = true;
+    vimdiffAlias = true;
 
     globals.mapleader = ",";
     opts = import ./opts.nix;
     keymaps = import ./keymaps.nix;
+    autoCmd = import ./autocmds.nix;
 
     colorschemes.oxocarbon.enable = true;
 
-    plugins = import ./plugins.nix;
-    # extraconfiglua = lib.filecontents /home/oxke/.config/nvim/init.lua.bak;
+    extraConfigLua = lib.fileContents ./extraConfigLua.lua;
   };
 }

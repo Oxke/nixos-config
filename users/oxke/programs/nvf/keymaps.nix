@@ -219,11 +219,5 @@
     key = "<C-l>";
     action = ":Lazy<CR>";
   }
-  # vimtex
-  {
-    mode = "n";
-    key = "<leader>vc";
-    action = ":VimtexCompile<CR>";
-  }
 ]
 
