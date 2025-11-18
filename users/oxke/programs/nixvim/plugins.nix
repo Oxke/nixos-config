@@ -27,7 +27,7 @@
       telescope.enable = true;
       mini = {
         enable = true;
-        modules = true;
+        modules = import ./mini-modules.nix;
         mockDevIcons = true;
       };
       lazy = {
