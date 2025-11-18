@@ -25,10 +25,10 @@
       };
       friendly-snippets.enable = true;
       telescope.enable = true;
+      web-devicons.enable = true;
       mini = {
         enable = true;
         modules = import ./mini-modules.nix;
-        mockDevIcons = true;
       };
       lazy = {
         enable = true;
