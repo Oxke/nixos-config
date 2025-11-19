@@ -14,7 +14,6 @@
     nerd-fonts.caskaydia-cove fira-code
     nodejs tree-sitter ripgrep
     texliveFull luarocks
-    texlivePackages.cancel
     bitwarden-menu
     mutt discord-canary nchat
     gccgo R octaveFull

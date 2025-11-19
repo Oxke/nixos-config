@@ -2,7 +2,6 @@
 {
   programs.nixvim = { 
     plugins = {
-      vimtex.enable = true;
       lz-n.enable = true;
       lualine.enable = true;
       treesitter.enable = true;
@@ -81,6 +80,11 @@
             end
           '';
         };
+      };
+      vimtex = {
+        enable = true; 
+        texlivePackage = pkgs.texliveFull;
+        settings.view_method = "zathura";
       };
       luasnip.enable = true;
       friendly-snippets.enable = true;

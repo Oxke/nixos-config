@@ -225,5 +225,10 @@
     key = "<leader>vc";
     action = ":VimtexCompile<CR>";
   }
+  {
+    mode = "n";
+    key = "<leader>vv";
+    action = ":VimtexView<CR>";
+  }
 ]
 
