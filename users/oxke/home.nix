@@ -12,6 +12,7 @@
     kitty lolcat sl cowsay
     waybar i3status
     nerd-fonts.caskaydia-cove fira-code
+    nodejs tree-sitter ripgrep
     texliveFull luarocks
     bitwarden-menu
     mutt discord-canary nchat

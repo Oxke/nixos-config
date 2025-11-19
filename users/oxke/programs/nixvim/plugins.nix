@@ -2,8 +2,8 @@
 {
   programs.nixvim = { 
     plugins = {
-      # vimtex.enable = true;
-      # lz-n.enable = true;
+      vimtex.enable = true;
+      lz-n.enable = true;
       lualine.enable = true;
       treesitter.enable = true;
       lsp = {
@@ -16,6 +16,7 @@
         };
       };
       cmp = {
+        enable = true;
         autoEnableSources = true;
         settings.sources = [
           { name = "nvim_lsp"; }
@@ -24,28 +25,44 @@
         ];
       };
       friendly-snippets.enable = true;
-      telescope.enable = true;
+      tiny-inline-diagnostic.enable = true;
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<C-p>" = {
+            action = "git_files";
+            options = {
+              desc = "Telescope Git Files";
+            };
+          };
+          "<leader>fg" = {
+            action = "live_grep";
+            options = {
+              desc = "Telescope Live Grep";
+            };
+          };
+          "<leader>ff" = {
+            action = "find_files";
+            options = {
+              desc = "Telescope Find Files";
+            };
+          };
+          "<leader>fb" = {
+            action = "buffers";
+            options = {
+              desc = "Telescope Find Buffers";
+            };
+          };
+        };
+      };
       web-devicons.enable = true;
       mini = {
         enable = true;
         modules = import ./mini-modules.nix;
       };
-      lazy = {
-        enable = true;
-        plugins = let vp = pkgs.vimPlugins; in [
-          {
-            pkg = vp.ultisnips;
-            event = ["InsertEnter"];
-          }
-          {
-            pkg = vp.vimtex;
-            ft = ["tex"];
-          }
-        ];
-      };
     };
-    # extraPlugins = let vp = pkgs.vimPlugins; in [
-    #   vp.ultisnips
-    # ];
+    extraPlugins = let vp = pkgs.vimPlugins; in [
+      vp.ultisnips
+    ];
   };
 }
