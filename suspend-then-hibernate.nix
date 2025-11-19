@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: let
+{ pkgs, ... }: let
   hibernateEnvironment = {
     HIBERNATE_SECONDS = "3600";
     HIBERNATE_LOCK = "/var/run/autohibernate.lock";
@@ -13,7 +13,7 @@ in {
       curtime=$(date +%s)
       echo "$curtime $1" >> /tmp/autohibernate.log
       echo "$curtime" > $HIBERNATE_LOCK
-      ${pkgs.utillinux}/bin/rtcwake -m no -s $HIBERNATE_SECONDS
+      ${pkgs.util-linux}/bin/rtcwake -m no -s $HIBERNATE_SECONDS
     '';
     serviceConfig.Type = "simple";
   };
@@ -29,7 +29,7 @@ in {
       if [ $(($curtime - $sustime)) -ge $HIBERNATE_SECONDS ] ; then
         systemctl hibernate
       else
-        ${pkgs.utillinux}/bin/rtcwake -m no -s 1
+        ${pkgs.util-linux}/bin/rtcwake -m no -s 1
       fi
     '';
     serviceConfig.Type = "simple";
