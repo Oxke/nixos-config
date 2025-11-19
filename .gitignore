@@ -1,1 +1,2 @@
 services/network.nix
+hardware-configuration.nix
